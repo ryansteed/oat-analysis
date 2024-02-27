@@ -1,0 +1,28 @@
+{
+    "tools": ["Harms Discovery", "Standards Identification & Management", "Transparency Infrastructure", "Data Collection", "Performance Analysis", "Audit Communication", "Advocacy"],
+
+    "Harms Discovery": ["Education/Awareness", "Incident Reporting", "Target Identification"],
+    "Education/Awareness": ["Community Education", "Visioning"],
+    "Incident Reporting": ["Public or Community Intake Forms", "Unsolicited Crowd-Sourced Reporting", "Incident Databases", "Solicited Crowd-Sourced Reporting (Bug Bounties)", "Whistleblowing"],
+    "Target Identification": ["Algorithm Visibility"],
+
+    "Standards Identification & Management": ["Self-Assessment", "Goal Articulation", "Documentation", "Regulatory Awareness", "Participatory Standard-Setting", "Methods Design"],
+    "Self-Assessment": ["Checklists", "Grading"],
+    "Goal Articulation": ["Standards Formulation", "Principle Statements"],
+    "Documentation": ["Single Stage Documentation", "Continuous Documentation", "Licenses"],
+    "Regulatory Awareness": ["Compliance Monitoring", "Compliance Discovery"],
+
+    "Transparency Infrastructure": ["Structured Access / API Access", "Secure and Privacy-Preserving Sharing", "Data Sharing"],
+    "Secure and Privacy-Preserving Sharing": ["Secure Databases", "Federated Learning"],
+
+    "Data Collection": ["Simulation", "Bot Deployment", "Field Data Collection"],
+    "Field Data Collection": ["Interview/Survey", "Data Scraping", "Data Donation", "Compelled Transparency"],
+
+    "Performance Analysis": ["Fairness", "Accuracy Evaluation", "Explainability", "Qualitative Analysis"],
+    "Accuracy Evaluation": ["Benchmarking", "A/B Testing", "Model Monitoring", "Adversarial Testing"],
+    "Explainability": ["Training Dataset Exploration", "Model Explainability"],
+    
+    "Audit Communication": ["Dataset Visualization", "Audit Reporting"],
+
+    "Advocacy": ["Legal Search", "Tools for Resistance", "Organising Tools", "Community Spaces"]
+}

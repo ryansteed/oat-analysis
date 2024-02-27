@@ -1,0 +1,12 @@
+venv
+*.db
+.Rproj.user
+.R*
+organization_descriptions.csv
+secrets.json
+__pycache__
+crunchbase/bulk_export.tar.gz
+crunchbase/cb-query_*
+cbinsights/*
+notebooks/
+*.Rproj

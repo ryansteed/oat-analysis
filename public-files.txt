@@ -1,0 +1,14 @@
+plots
+tables
+Makefile
+data/airtable.csv
+data/taxonomy.json
+output/airtable.yaml
+output/airtable_for_pivot.csv
+output/airtable_gh.csv
+output/categories.csv
+clean.py
+analysis.Rmd
+utils.R
+requirements.txt
+README.md

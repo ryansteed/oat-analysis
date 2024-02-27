@@ -1,0 +1,11 @@
+pandas
+ipykernel
+networkx
+matplotlib
+click
+pyyaml
+sqlalchemy
+fuzzywuzzy[speedup]
+joblib
+tqdm
+pygithub

@@ -1,0 +1,447 @@
+---
+title: "Analysis"
+author: "Ryan Steed"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("utils.R")
+```
+
+```{r data}
+airtable = read.csv(
+  "output/airtable_for_pivot.csv",
+  na.strings=c(" ", "", "NA", "NaN")
+) %>%
+  clean_names()
+
+# all dataframes
+cleaned = clean_airtable(airtable)
+cleaned %>%
+  group_by(taxonomy_1st) %>%
+  summarise(n = n_distinct(name, organization))
+cleaned %>%
+  group_by(taxonomy_1st, taxonomy_2nd) %>%
+  summarise(n = n_distinct(name, organization))
+cleaned %>%
+  group_by(taxonomy_1st, taxonomy_2nd, taxonomy_3rd) %>%
+  summarise(n = n_distinct(name, organization))
+
+# cb dataframes
+cb_exists = cleaned %>%
+  drop_na(cb_url) %>%
+  mutate(cb_total_funding_usd_mil = cb_total_funding_amount_currency_in_usd / 1e6) %>%
+  mutate_at(all_of(cb_numerics), function(x) as.numeric(gsub(",", "", x)))
+cb_firms = cb_exists %>%
+  filter(!grepl("University", org_type_creator), !grepl("Govt", org_type_creator), cb_organization_type != "school", cb_name != "Massachusetts Institute of Technology")
+cb_private = cb_firms %>%
+  filter(cb_ipo_status == "Private")
+cb_orgs = cb_exists %>%
+  mutate(cb_name_formatted = paste0("href{", cb_url, "}{", cb_name, "}")) %>%
+  group_by(cb_name) %>%
+  mutate(taxonomy_1st_concat = paste0(unique(as.character(taxonomy_1st)), collapse=", ")) %>%
+  distinct(cb_name, cb_name_formatted, taxonomy_1st_concat, cb_total_funding_usd_mil, cb_estimated_revenue_range, cb_employee_count, cb_url)
+
+# gh dataframes
+gh_exists = cleaned %>%
+  drop_na(gh_url)
+gh_repos = gh_exists %>%
+  mutate(name_formatted = paste0("href{", gh_url, "}{", name, "}")) %>%
+  group_by(gh_url) %>%
+  mutate(taxonomy_1st_concat = paste0(unique(as.character(taxonomy_1st)), collapse=", ")) %>%
+  distinct(name, name_formatted, taxonomy_1st_concat, gh_forks, gh_issues, gh_stars, gh_url)
+
+# citation info
+cites_exists = cleaned %>%
+  drop_na(cites)
+
+cleaned %>% select(cb_employee_count_min)
+cleaned %>%
+  group_by(taxonomy_1st, audit_target_type) %>%
+  summarise(count=n_distinct(tool_id)) %>%
+  mutate(prop=count/sum(count))
+```
+```{r sample-sizes}
+print(paste("Tools", cleaned %>% distinct(name, organization) %>% nrow(.)))
+print(paste("Orgs", cleaned %>% distinct(organization) %>% nrow(.)))
+
+print(paste("Tools (CB)", cb_exists %>% distinct(name, organization) %>% nrow(.)))
+print(paste("Orgs (CB)", cb_exists %>% distinct(organization) %>% nrow(.)))
+print(paste("Orgs (CB, employee record)", cb_exists %>% drop_na(cb_employee_count) %>% distinct(organization) %>% nrow(.)))
+print(paste("Tools (CB, not uni or gov)", cb_firms %>% distinct(name, organization) %>% nrow(.)))
+print(paste("Orgs (CB, not uni or gov)", cb_firms %>% distinct(organization) %>% nrow(.)))
+print(paste("Orgs (CB, not uni or gov, revenue record)", cb_firms %>% drop_na(cb_estimated_revenue_range) %>% distinct(organization) %>% nrow(.)))
+print(paste("Orgs (CB, not uni or gov, pre-IPO)", cb_private %>% distinct(organization) %>% nrow(.)))
+print(paste("Orgs (CB, not uni or gov, pre-IPO, funding record)", cb_private %>% drop_na(cb_total_funding_usd_mil) %>% distinct(organization) %>% nrow(.)))
+
+print(paste("Tools (GH)", gh_exists %>% distinct(name, organization) %>% nrow(.)))
+print(paste("GH repos", gh_exists %>% distinct(gh_url) %>% nrow(.)))
+
+print(paste("Tools (cites)", cites_exists %>% distinct(name, organization) %>% nrow(.)))
+```
+
+```{r summary}
+print(summary(
+  cleaned %>% 
+    distinct(name, organization, org_type_creator, audit_target_type, license) %>%
+    select(org_type_creator, audit_target_type, license)
+))
+```
+```{r summary}
+cleaned %>% group_by(taxonomy_1st, taxonomy_2nd, taxonomy_3rd) %>% 
+  summarise(N = n()) %>%
+  write.csv(., file="output/categories.csv")
+cleaned %>% group_by(taxonomy_1st, taxonomy_2nd) %>% 
+  summarise(N = n())
+cleaned %>% group_by(taxonomy_1st) %>% 
+  summarise(N = n())
+cleaned %>% group_by(taxonomy_accountability) %>% 
+  summarise(N = n())
+```
+
+
+## Taxonomy Counts
+```{r first}
+bar_1st = function(field, position) {
+  bar_count(field, position, "taxonomy_1st_condensed") + 
+  for (ext in c("pdf", "png")) {
+    ggsave(sprintf("plots/counts/first_%s_%s.%s", position, field, ext), width=4.5, height=4)
+  }
+}
+bar_1st("license", "stack")
+bar_1st("internal_external", "stack")
+bar_1st("org_type_creator", "stack")
+bar_1st("audit_target_type", "stack")
+bar_1st("has_code_or_data", "stack")
+bar_1st("license", "fill")
+bar_1st("internal_external", "fill")
+bar_1st("org_type_creator", "fill")
+bar_1st("audit_target_type", "fill")
+bar_1st("has_code_or_data", "fill")
+bar_1st("has_paper_or_handbook", "fill")
+bar_count("license", "fill", "org_type_creator") + xlab("Organization Type")
+save("plots/counts/org_type_creator_license", 4.5, 4)
+```
+
+```{r second}
+bar_2nd = function(field, position) {
+  plt = bar_count(field, position, "taxonomy_2nd") +
+    facet_wrap(taxonomy_1st_condensed ~ ., scales="free", switch="y", ncol=2)
+  for (ext in c("pdf", "png")) {
+    ggsave(sprintf("plots/counts/second_%s_%s.%s", position, field, ext), width=7, height=4)
+  }
+  plt
+}
+bar_2nd("license", "stack")
+bar_2nd("internal_external", "stack")
+bar_2nd("org_type_creator", "stack")
+bar_2nd("audit_target_type", "stack")
+bar_2nd("has_code_or_data", "stack")
+bar_2nd("has_paper_or_handbook", "stack")
+bar_2nd("license", "fill")
+bar_2nd("internal_external", "fill")
+bar_2nd("org_type_creator", "fill")
+bar_2nd("audit_target_type", "fill")
+bar_2nd("has_code_or_data", "fill")
+bar_2nd("has_paper_or_handbook", "fill")
+```
+
+```{r treemap}
+agg = cleaned %>%
+  group_by(taxonomy_1st, taxonomy_2nd) %>%
+  summarise(count = n_distinct(tool_id), .groups="drop_last")
+
+treemap(
+  agg,
+  index=c("taxonomy_1st", "taxonomy_2nd"),
+  vSize="count",
+  type="index",
+  title="Taxonomy",
+  fontcolor.labels=c("white", "black"),
+  fontface.labels=c(2, 1),
+  inflate.labels=F
+)
+
+treemap(
+  agg,
+  index=c("taxonomy_1st"),
+  vSize="count",
+  type="index",
+  title="Taxonomy",
+  fontface.labels=c(2, 1),
+  inflate.labels=F
+)
+```
+
+## Investment
+```{r crunchbase}
+summary(cb_exists %>% select(all_of(cb_numerics), all_of(cb_cats)), breaks=20)
+```
+
+```{r pivots}
+cb_exists %>% group_by(org_type_creator) %>% select(cb_total_funding_usd_mil) %>% pivot
+cb_exists %>% group_by(org_type_creator, taxonomy_1st) %>% select(cb_total_funding_usd_mil) %>% pivot
+cb_exists %>% group_by(cb_name) %>% select(cb_total_funding_usd_mil) %>% pivot %>% arrange(desc(Median))
+cb_exists %>% group_by(org_type_creator) %>% select(cb_number_of_funding_rounds) %>% pivot
+cb_exists %>% group_by(org_type_creator, taxonomy_1st) %>% select(cb_number_of_funding_rounds) %>% pivot
+```
+```{r recent}
+# check for cases where we labelled non-profit but not really non-profit. CB is usually wrong, but check
+# cb_exists %>% 
+#   filter(cb_company_type != "Non-profit", org_type_creator == "Non Profit") %>% 
+#   select(cb_name, cb_company_type, org_type_creator)
+cb_firms %>%
+  summarise(years_since_founding = as.numeric(difftime(as.Date('2023-08-22'), as.Date(cb_founded_date), units="days")) / 365) %>%
+  with(hist(years_since_founding, breaks=20))
+cb_private
+cb_private %>% group_by(taxonomy_1st, taxonomy_2nd) %>% select(cb_total_funding_usd_mil) %>% pivot %>% group_by(taxonomy_1st, taxonomy_2nd) %>% arrange(desc(Median))
+cb_private %>% arrange(desc(cb_total_funding_usd_mil)) %>% select(starts_with("cb_"))
+```
+```{r top-funded}
+print(cb_private %>% drop_na(cb_total_funding_usd_mil) %>% nrow(.))
+
+cb_private %>%
+  drop_na(cb_total_funding_usd_mil) %>%
+  select(cb_name, cb_total_funding_usd_mil) %>%
+  group_by(cb_name) %>%
+  pivot %>%
+  arrange(desc(Median)) %>%
+  head(20) %>%
+  select(cb_name) %>%
+  left_join(., cb_orgs, by="cb_name") %>%
+  select(cb_name_formatted, cb_total_funding_usd_mil, cb_estimated_revenue_range, cb_employee_count, taxonomy_1st_concat) %>%
+  mutate_at(
+    vars(cb_estimated_revenue_range, cb_employee_count),
+    as.character
+  ) %>%
+  stargazer(
+    ., summary=F, rownames=F,
+    digits=1,
+    covariate.labels=c("Organization", "Total funding (millions USD)", "Estimated revenue", "Employees", "Stages"),
+    label="tab:top-funding"
+  )
+
+cb_private %>%
+  drop_na(cb_total_funding_usd_mil) %>%
+  select(cb_name, taxonomy_1st, cb_total_funding_usd_mil) %>%
+  group_by(cb_name, taxonomy_1st) %>%
+  pivot %>%
+  group_by(taxonomy_1st) %>%
+  mutate(
+    N = n_distinct(cb_name)
+  ) %>%
+  slice_max(order_by=Median, n=5) %>%
+  select(cb_name, taxonomy_1st, N) %>%
+  left_join(., cb_orgs, by="cb_name") %>%
+  select(taxonomy_1st, N, cb_name_formatted, cb_total_funding_usd_mil, cb_estimated_revenue_range, cb_employee_count) %>%
+  mutate_at(
+    vars(taxonomy_1st, cb_estimated_revenue_range, cb_employee_count),
+    as.character
+  ) %>%
+  stargazer(
+    ., summary=F, rownames=F, out="tables/top-funded.tex",
+    digits=1,
+    covariate.labels=c("Stage", "N", "Organization", "Total funding (millions USD)", "Estimated revenue", "Employees"),
+    label="tab:top-funding"
+  )
+```
+
+```{r bars}
+bar_agg(cb_private, "taxonomy_1st", "org_type_creator", "dodge", "sum", "cb_total_funding_usd_mil") + ylab("Total org. funding (millions USD)")
+bar_agg(cb_private, "taxonomy_1st", "audit_target_type", "dodge", "sum", "cb_total_funding_usd_mil") + ylab("Total org. funding (millions USD)")
+bar_agg(cb_private, "taxonomy_1st", "has_code_or_data", "dodge", "sum", "cb_total_funding_usd_mil") + ylab("Total org. funding (millions USD)")
+bar_agg(cb_private, "taxonomy_1st", "license", "dodge", "sum", "cb_total_funding_usd_mil") + ylab("Total org. funding (millions USD)")
+```
+
+```{r box}
+violin(cb_private, "cb_total_funding_usd_mil", "org_type_creator", "taxonomy_1st_condensed", "cb_name", T)
+violin(cb_private, "cb_total_funding_usd_mil", "audit_target_type", "taxonomy_1st_condensed", "cb_name", T)
+violin(cb_private, "cb_total_funding_usd_mil", "license", "taxonomy_1st_condensed", "cb_name", T)
+violin(cb_private, "cb_total_funding_usd_mil", "has_code_or_data", "taxonomy_1st_condensed", "cb_name", T)
+```
+
+```{r employee_count}
+hist_plot(cleaned, "cb_employee_count", "org_type_creator")
+hist_plot(cb_firms, "cb_estimated_revenue_range", "org_type_creator")
+hist_plot(cleaned, "cb_employee_count", "license")
+hist_plot(cb_firms, "cb_estimated_revenue_range", "license")
+# hist_plot(cleaned, "cb_employee_count", "audit_target_type")
+# hist_plot(cb_firms, "cb_estimated_revenue_range", "audit_target_type")
+hist_plot(cleaned, "cb_employee_count", "has_code_or_data")
+hist_plot(cb_firms, "cb_estimated_revenue_range", "has_code_or_data")
+```
+
+## Github
+```{r github}
+gh_exists
+gh_numerics = c("gh_stars", "gh_forks", "gh_watchers", "gh_issues")
+summary(cb_exists %>% select(all_of(gh_numerics), "gh_owner"), breaks=20)
+gh_exists %>% group_by(org_type_creator) %>% select(gh_stars) %>% pivot
+gh_exists %>% group_by(org_type_creator) %>% select(gh_forks) %>% pivot
+gh_exists %>% group_by(org_type_creator) %>% select(gh_watchers) %>% pivot
+gh_exists %>% group_by(org_type_creator) %>% select(gh_issues) %>% pivot
+gh_exists %>% group_by(taxonomy_1st, gh_owner) %>% select(gh_stars) %>% pivot %>% arrange(desc(Median))
+gh_exists %>% group_by(taxonomy_1st, cb_name) %>% select(gh_stars) %>% pivot %>% arrange(desc(Median))
+gh_exists %>% with(plot(gh_stars, gh_forks))
+gh_exists %>% with(plot(gh_stars, gh_issues))
+```
+
+```{r most-popular}
+gh_exists %>%
+  drop_na(gh_forks) %>%
+  select(gh_url, gh_forks) %>%
+  group_by(gh_url) %>%
+  pivot %>%
+  arrange(desc(Median)) %>%
+  head(20) %>%
+  select(gh_url) %>%
+  left_join(., gh_repos, by="gh_url") %>%
+  select(name_formatted, gh_forks, gh_issues, gh_stars, taxonomy_1st_concat) %>%
+  stargazer(
+    ., summary=F, rownames=F,
+    digits=1,
+    covariate.labels=c("Organization", "Forks", "Issues", "Stars", "Stages"),
+    label="tab:top-funding"
+  )
+```
+
+```{r boxes}
+# violin(gh_exists, "gh_stars", "org_type_creator", "taxonomy_1st", "gh_owner", T) + ylab("Github stars")
+violin(gh_exists, "gh_forks", "org_type_creator", "taxonomy_1st_condensed", "name", T)
+violin(gh_exists, "gh_issues", "org_type_creator", "taxonomy_1st_condensed", "name", T)
+
+# violin(gh_exists, "gh_stars", "audit_target_type", "taxonomy_1st", "gh_owner", T) + ylab("Github stars")
+# violin(gh_exists, "gh_forks", "audit_target_type", "taxonomy_1st", "name", T)
+# violin(gh_exists, "gh_issues", "audit_target_type", "taxonomy_1st", "name", T)
+# 
+# violin(gh_exists, "gh_forks", "has_code_or_data", "taxonomy_1st", "name", T)
+# 
+# violin(gh_exists, "gh_forks", "license", "taxonomy_1st", "name", T)
+```
+
+```{r gh-hists}
+hist_plot(gh_exists, "gh_forks", "org_type_creator", F)
+```
+```{r}
+ggplot(gh_exists, aes(x=gh_forks, y=gh_issues, color=taxonomy_1st)) +
+  geom_point() +
+  scale_y_log10() +
+  scale_x_log10()
+```
+
+```{r stars}
+bar_forks = function(taxonomy_level, field, grouping, agg_kind) {
+  if (agg_kind == "median") {
+    lab = "Median Github forks"
+  }
+  else if (agg_kind == "mean") {
+    lab = "Mean Github forks"
+  }
+  else if (agg_kind == "sum") {
+    lab = "Total Github forks"
+  }
+  bar_agg(taxonomy_level, field, grouping, agg_kind, "gh_forks") +
+    ylab(lab)
+}
+# bar_stars("taxonomy_1st", "org_type_creator", "stack", "median")
+# bar_stars("taxonomy_1st", "org_type_creator", "stack", "mean")
+bar_forks("taxonomy_1st", "org_type_creator", "stack", "sum")
+# bar_stars("taxonomy_1st", "audit_target_type", "stack", "median")
+# bar_stars("taxonomy_1st", "audit_target_type", "stack", "mean")
+bar_forks("taxonomy_1st", "audit_target_type", "stack", "sum")
+bar_forks("taxonomy_1st", "has_code_or_data", "stack", "sum")
+  
+# bar_stars("taxonomy_2nd", "org_type_creator", "stack", "median")
+# bar_stars("taxonomy_2nd", "org_type_creator", "stack", "mean")
+bar_forks("taxonomy_2nd", "org_type_creator", "stack", "sum")
+# bar_stars("taxonomy_2nd", "audit_target_type", "stack", "median")
+# bar_stars("taxonomy_2nd", "audit_target_type", "stack", "mean")
+bar_forks("taxonomy_2nd", "audit_target_type", "stack", "sum")
+```
+
+```{r bar-issues}
+bar_issues = function(taxonomy_level, field, grouping, agg_kind) {
+  if (agg_kind == "median") {
+    lab = "Median Github issues"
+  }
+  else if (agg_kind == "mean") {
+    lab = "Mean Github issues"
+  }
+  else if (agg_kind == "sum") {
+    lab = "Total Github issues"
+  }
+  bar_agg(taxonomy_level, field, grouping, agg_kind, "gh_issues") +
+    ylab(lab)
+}
+# bar_stars("taxonomy_1st", "org_type_creator", "stack", "median")
+# bar_stars("taxonomy_1st", "org_type_creator", "stack", "mean")
+bar_issues("taxonomy_1st", "org_type_creator", "stack", "sum")
+# bar_stars("taxonomy_1st", "audit_target_type", "stack", "median")
+# bar_stars("taxonomy_1st", "audit_target_type", "stack", "mean")
+bar_issues("taxonomy_1st", "audit_target_type", "stack", "sum")
+bar_issues("taxonomy_1st", "has_code_or_data", "stack", "sum")
+  
+# bar_stars("taxonomy_2nd", "org_type_creator", "stack", "median")
+# bar_stars("taxonomy_2nd", "org_type_creator", "stack", "mean")
+bar_issues("taxonomy_2nd", "org_type_creator", "stack", "sum")
+# bar_stars("taxonomy_2nd", "audit_target_type", "stack", "median")
+# bar_stars("taxonomy_2nd", "audit_target_type", "stack", "mean")
+bar_issues("taxonomy_2nd", "audit_target_type", "stack", "sum")
+```
+
+
+
+## Cites
+```{r cites}
+summary(cites_exists %>% select(cites), breaks=20)
+cites_exists%>% with(hist(cites))
+violin(cites_exists, "cites", "org_type_creator", "taxonomy_1st_condensed", "name", T)
+violin(cites_exists, "cites", "license", "taxonomy_1st_condensed", "name", T)
+violin(cites_exists, "cites", "has_code_or_data", "taxonomy_1st_condensed", "name", T)
+violin(cites_exists, "cites", "audit_target_type", "taxonomy_1st_condensed", "name", T)
+```
+
+## Cites x Github
+```{r gh_cites}
+# gh_cites_exists = gh_exists %>%
+#   drop_na(cites)
+
+filled = cleaned %>%
+  replace_na(list(cites=0, gh_forks=0)) %>%
+  mutate(show = gh_forks != 0 & cites != 0)
+
+ggplot() +
+  geom_point(data=filled, aes(x=gh_forks, y=cites)) +
+  geom_text_repel(data=(gh_exists %>% drop_na(cites)), aes(x=gh_forks, y=cites, label=name))
+
+p = ggplot(filled, aes(x=log(gh_forks), y=log(cites), color=show)) +
+  geom_point() +
+  scale_color_manual(values=c("transparent", "black"), guide='none') +
+  geom_text_repel(data=(filled %>% filter(show)), aes(label=name))
+ggMarginal(
+  p = p,
+  type="histogram",
+  margins="both"
+)
+
+gh_cites_combined = cleaned %>%
+  gather(key="usage_type", value="usage", gh_forks, cites, na.rm=T) %>%
+  mutate(
+    usage_type = fct_recode(as.factor(usage_type), "Github forks" = "gh_forks", "Citations" = "cites")
+  )
+violin(gh_cites_combined, "usage", "usage_type", "taxonomy_1st_condensed", "name", T)
+```
+
+## Crunchbase x Github
+```{r scatter}
+cb_gh_exists = cb_exists %>%
+  drop_na(gh_url)
+cb_gh_exists
+ggplot(cb_gh_exists, aes(x=cb_total_funding_usd_mil, y=gh_stars, color=taxonomy_1st)) +
+  geom_point() +
+  coord_cartesian(xlim=c(NA, 1500), ylim=c(NA, 5000))
+ggplot(cb_gh_exists, aes(x=cb_total_funding_usd_mil, y=gh_issues, color=taxonomy_1st)) +
+  geom_point() +
+  coord_cartesian(xlim=c(NA, 1500), ylim=c(NA, 1000))
+```

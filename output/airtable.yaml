@@ -1,0 +1,1272 @@
+landscape:
+- name: Advocacy
+  subcategories:
+  - name: Tools for Resistance
+    items:
+    - name: adnauseam
+      homepage_url: https://adnauseam.io/
+      organization: '{"name": adnauseam}'
+      extra:
+        Format (TODO): Software Product
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Advocacy
+        - Tools for Resistance
+        Audit  Target Type: Online Platform
+    - name: Gigbox / Shipt Calculator
+      homepage_url: https://gigbox.media.mit.edu/app/, https://gigbox.media.mit.edu/posts/posts/tool-the-shipt-calculator/,
+        https://www.dcalacci.net/papers/204.10.13-shipt-cscw-latest.pdf
+      organization: '{"name": MIT, Coworker.org}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy: &id007
+        - Data Collection
+        - Field Data Collection
+        - Data Donation
+        - Advocacy
+        - Tools for Resistance
+        Audit  Target Type: Online Platform
+  - name: Community Spaces
+    items:
+    - name: Benefits Tech Advocacy Hub
+      homepage_url: https://www.upturn.org/work/benefits-tech-advocacy-hub/
+      organization: '{"name": Upturn}'
+      extra:
+        Format (TODO): .nan
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Advocacy
+        - Community Spaces
+        Audit  Target Type: Any
+    - name: For Humanity
+      homepage_url: https://forhumanity.center/
+      organization: '{"name": For Humanity}'
+      extra:
+        Format (TODO): .nan
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Advocacy
+        - Community Spaces
+        Audit  Target Type: Any
+  - name: Legal Search
+    items:
+    - name: Case Study Library
+      homepage_url: https://www.btah.org/case-studies.html
+      organization: '{"name": Benefits Tech Advocacy Hub}'
+      extra:
+        Format (TODO): Data Repository
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Advocacy
+        - Legal Search
+        Audit  Target Type: Any
+    - name: Westlaw
+      homepage_url: https://legal.thomsonreuters.com/en/westlaw
+      organization: '{"name": Thomson Reuters}'
+      extra:
+        Format (TODO): Data Repository
+        License: Proprietary
+        Internal/External: Internal,External
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Advocacy
+        - Legal Search
+        Audit  Target Type: Any
+  - name: Organising Tools
+    items:
+    - name: Para App
+      homepage_url: https://www.withpara.com/
+      organization: '{"name": Para}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Advocacy
+        - Organising Tools
+        Audit  Target Type: Online Platform
+- name: Performance Analysis
+  subcategories:
+  - name: Accuracy Evaluation
+    items:
+    - name: Adversarial Robustness Toolbox
+      homepage_url: https://github.com/Trusted-AI/adversarial-robustness-toolbox
+      organization: '{"name": Linux Foundation AI & Data}'
+      extra:
+        Format (TODO): Code Repository
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Performance Analysis
+        - Accuracy Evaluation
+        - Adversarial Testing
+        Audit  Target Type: Online Platform,ADS
+      repo_url: https://github.com/Trusted-AI/adversarial-robustness-toolbox
+    - name: Amazon SageMaker
+      homepage_url: https://aws.amazon.com/blogs/machine-learning/a-b-testing-ml-models-in-production-using-amazon-sagemaker/
+      organization: '{"name": Amazon}'
+      extra:
+        Format (TODO): Handbook
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Performance Analysis
+        - Accuracy Evaluation
+        - A/B Testing
+        Audit  Target Type: Any
+    - name: Arthur AI
+      homepage_url: https://www.arthur.ai/
+      organization: '{"name": Arthur AI}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy: &id001
+        - Standards Identification & Management
+        - Regulatory Awareness
+        - Compliance Monitoring
+        - Performance Analysis
+        - Fairness
+        - Accuracy Evaluation
+        - Model Monitoring
+        Audit  Target Type: Online Platform,ADS
+    - name: COMPAS
+      homepage_url: https://www.propublica.org/datastore/dataset/compas-recidivism-risk-score-data-and-analysis
+      organization: '{"name": ProPublica}'
+      extra:
+        Format (TODO): Data Repository
+        License: OpenSource
+        Internal/External: Internal,External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Performance Analysis
+        - Accuracy Evaluation
+        - Benchmarking
+        Audit  Target Type: Online Platform,ADS
+    - name: DynaBench/DynaBoard
+      homepage_url: https://ai.facebook.com/blog/dynaboard-moving-beyond-accuracy-to-holistic-model-evaluation-in-nlp/,
+        https://ai.facebook.com/blog/dynabench-rethinking-ai-benchmarking/
+      organization: '{"name": Meta}'
+      extra:
+        Format (TODO): Data Repository
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Performance Analysis
+        - Accuracy Evaluation
+        - Benchmarking
+        Audit  Target Type: Online Platform
+    - name: Error Analysis
+      homepage_url: https://github.com/microsoft/responsible-ai-toolbox,https://erroranalysis.ai/
+      organization: '{"name": Microsoft}'
+      extra:
+        Format (TODO): Code Repository
+        License: OpenSource
+        Internal/External: Internal
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Performance Analysis
+        - Model Monitoring
+        - Accuracy Evaluation
+        Audit  Target Type: Online Platform,ADS
+      repo_url: https://github.com/microsoft/responsible-ai-toolbox,https://erroranalysis.ai/
+    - name: Facebook Lift
+      homepage_url: https://web.facebook.com/business/m/one-sheeters/conversion-lift?_rdc=1&_rdr
+      organization: '{"name": Facebook}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Performance Analysis
+        - Accuracy Evaluation
+        - A/B Testing
+        Audit  Target Type: Online Platform
+    - name: 'FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age'
+      homepage_url: https://github.com/joojs/fairface
+      organization: '{"name": UCLA}'
+      extra:
+        Format (TODO): Data Repository
+        License: OpenSource
+        Internal/External: Internal,External
+        Org Type (Creator): University
+        Taxonomy:
+        - Performance Analysis
+        - Accuracy Evaluation
+        - Benchmarking
+        Audit  Target Type: Online Platform,ADS
+      repo_url: https://github.com/joojs/fairface
+    - name: Foolbox
+      homepage_url: https://github.com/bethgelab/foolbox
+      organization: '{"name": Bethge Labs, ELLIS}'
+      extra:
+        Format (TODO): Code Repository
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Adversarial Testing
+        - Performance Analysis
+        - Accuracy Evaluation
+        Audit  Target Type: Online Platform,ADS
+      repo_url: https://github.com/bethgelab/foolbox
+    - name: Pilot Parliaments
+      homepage_url: https://www.ajl.org/connect/request-dataset-for-research
+      organization: '{"name": AJL}'
+      extra:
+        Format (TODO): Data Repository
+        License: OpenSource
+        Internal/External: Internal,External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Performance Analysis
+        - Accuracy Evaluation
+        - Benchmarking
+        Audit  Target Type: Any
+    - name: Product Instrumentation and Experimentation
+      homepage_url: https://blog.twitter.com/engineering/en_us/a/2015/the-what-and-why-of-product-experimentation-at-twitter-0,
+        https://nlppeople.com/doing-data-science-at-twitter/?utm_source=rss&utm_medium=rss&utm_campaign=doing-data-science-at-twitter
+      organization: '{"name": Twitter}'
+      extra:
+        Format (TODO): Handbook
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Performance Analysis
+        - Accuracy Evaluation
+        - A/B Testing
+        Audit  Target Type: Online Platform
+    - name: SearchAtlas
+      homepage_url: https://searchatlas.org/
+      organization: '{"name": MIT, CMU}'
+      extra:
+        Format (TODO): White paper/Report
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Performance Analysis
+        - Accuracy Evaluation
+        - A/B Testing
+        Audit  Target Type: Online Platform
+    - name: Weights & Biases
+      homepage_url: https://www.wandb.com/
+      organization: '{"name": Weights and Biases }'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Performance Analysis
+        - Accuracy Evaluation
+        - Model Monitoring
+        Audit  Target Type: Online Platform,ADS
+  - name: Fairness
+    items:
+    - name: Aequitas
+      homepage_url: http://www.datasciencepublicpolicy.org/projects/aequitas/
+      organization: '{"name": University of Chicago, Center for Data Science and Public
+        Policy, Carnegie Mellon}'
+      extra:
+        Format (TODO): Software Product
+        License: OpenSource
+        Internal/External: Internal
+        Org Type (Creator): University
+        Taxonomy:
+        - Performance Analysis
+        - Fairness
+        Audit  Target Type: ADS
+    - name: AI Fairness 360
+      homepage_url: https://www.ibm.com/blogs/research/2018/09/ai-fairness-360/
+      organization: '{"name": IBM}'
+      extra:
+        Format (TODO): White paper/Report,Software Product
+        License: OpenSource
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Performance Analysis
+        - Fairness
+        Audit  Target Type: ADS
+    - name: Amazon Sage-Maker Clarify
+      homepage_url: https://pages.awscloud.com/rs/112-TZM-766/images/Amazon.AI.Fairness.and.Explainability.Whitepaper.pdf
+        , https://aws.amazon.com/sagemaker/clarify/?trk=el_a134p000006vhsiAAA&trkCampaign=NA-FY21-GC-400-FTSA-SAG-SageMaker-Clarify&sc_channel=el&sc_campaign=EL_AI-Fairness-Explainability-Whitepaper&sc_outcome=AIML_Digital_Marketing
+      organization: '{"name": Amazon }'
+      extra:
+        Format (TODO): White paper/Report,Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy: &id002
+        - Performance Analysis
+        - Fairness
+        - Explainability
+        - Model Explainability
+        Audit  Target Type: Any
+    - name: Arthur AI
+      homepage_url: https://www.arthur.ai/
+      organization: '{"name": Arthur AI}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy: *id001
+        Audit  Target Type: Online Platform,ADS
+    - name: Fairlearn
+      homepage_url: https://fairlearn.org/
+      organization: '{"name": Fairlearn}'
+      extra:
+        Format (TODO): Code Repository
+        License: OpenSource
+        Internal/External: Internal
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Performance Analysis
+        - Fairness
+        Audit  Target Type: Online Platform,ADS
+    - name: FairPy
+      homepage_url: https://github.com/HrishikeshVish/Fairpy
+      organization: '{"name": Hrishikesh Viswanath, Tianyi Zhang}'
+      extra:
+        Format (TODO): Code Repository
+        License: OpenSource
+        Internal/External: Internal,External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Performance Analysis
+        - Fairness
+        Audit  Target Type: Large Pre-trained Models
+      repo_url: https://github.com/HrishikeshVish/Fairpy
+  - name: Explainability
+    items:
+    - name: AI Explainability 360
+      homepage_url: https://ai-explainability-360.org/
+      organization: '{"name": Linux Foundation}'
+      extra:
+        Format (TODO): White paper/Report,Software Product
+        License: OpenSource
+        Internal/External: Internal
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Performance Analysis
+        - Explainability
+        - Model Explainability
+        Audit  Target Type: Any
+    - name: Amazon Sage-Maker Clarify
+      homepage_url: https://pages.awscloud.com/rs/112-TZM-766/images/Amazon.AI.Fairness.and.Explainability.Whitepaper.pdf
+        , https://aws.amazon.com/sagemaker/clarify/?trk=el_a134p000006vhsiAAA&trkCampaign=NA-FY21-GC-400-FTSA-SAG-SageMaker-Clarify&sc_channel=el&sc_campaign=EL_AI-Fairness-Explainability-Whitepaper&sc_outcome=AIML_Digital_Marketing
+      organization: '{"name": Amazon }'
+      extra:
+        Format (TODO): White paper/Report,Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy: *id002
+        Audit  Target Type: Any
+    - name: Databricks Lakehouse Platform
+      homepage_url: https://www.databricks.com/product/data-lakehouse
+      organization: '{"name": Databricks}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy: &id005
+        - Transparency Infrastructure
+        - Federated Learning
+        - Training Dataset Exploration
+        - Data Sharing
+        - Secure and Privacy-Preserving Sharing
+        - Explainability
+        Audit  Target Type: Online Platform
+    - name: 'Facets: Visualizations for ML Datasets'
+      homepage_url: https://pair-code.github.io/facets/
+      organization: '{"name": Google}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy: &id012
+        - Audit Communication
+        - Dataset Visualization
+        - Performance Analysis
+        - Explainability
+        - Training Dataset Exploration
+        Audit  Target Type: Online Platform,ADS
+    - name: Google KnowYourData
+      homepage_url: https://knowyourdata.withgoogle.com/
+      organization: '{"name": Google}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Performance Analysis
+        - Explainability
+        - Training Dataset Exploration
+        Audit  Target Type: Online Platform
+    - name: Interpret
+      homepage_url: https://github.com/interpretml/interpret
+      organization: '{"name": InterpretML}'
+      extra:
+        Format (TODO): Code Repository
+        License: OpenSource
+        Internal/External: Internal
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Performance Analysis
+        - Explainability
+        - Model Explainability
+        Audit  Target Type: Online Platform,ADS
+      repo_url: https://github.com/interpretml/interpret
+    - name: Language Interpretability Tool
+      homepage_url: https://pair-code.github.io/lit/
+      organization: '{"name": Google}'
+      extra:
+        Format (TODO): Software Product
+        License: OpenSource
+        Internal/External: Internal,External
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Performance Analysis
+        - Explainability
+        - Model Explainability
+        Audit  Target Type: Online Platform,Large Pre-trained Models
+    - name: ROOTS
+      homepage_url: https://arxiv.org/pdf/2302.14035.pdf
+      organization: '{"name": Hugging Face}'
+      extra:
+        Format (TODO): White paper/Report,Software Product
+        License: OpenSource
+        Internal/External: Internal,External
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Performance Analysis
+        - Explainability
+        - Training Dataset Exploration
+        Audit  Target Type: Large Pre-trained Models
+  - name: Qualitative Analysis
+    items:
+    - name: Dedoose
+      homepage_url: https://www.dedoose.com/
+      organization: '{"name": Dedoose}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal,External
+        Org Type (Creator): For Profit
+        Taxonomy: &id006
+        - Data Collection
+        - Field Data Collection
+        - Interview/Survey
+        - Performance Analysis
+        - Qualitative Analysis
+        Audit  Target Type: Any
+    - name: MaxQDA
+      homepage_url: https://www.maxqda.com/
+      organization: '{"name": MaxQDA}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal,External
+        Org Type (Creator): For Profit
+        Taxonomy: &id009
+        - Data Collection
+        - Field Data Collection
+        - Interview/Survey
+        - Performance Analysis
+        - Qualitative Analysis
+        Audit  Target Type: Any
+- name: Standards Identification & Management
+  subcategories:
+  - name: Self-Assessment
+    items:
+    - name: AI Fairness Checklist
+      homepage_url: https://www.microsoft.com/en-us/research/project/ai-fairness-checklist/,
+        https://dl.acm.org/doi/pdf/10.1145/3313831.3376445
+      organization: '{"name": Microsoft}'
+      extra:
+        Format (TODO): White paper/Report
+        License: OpenSource
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Standards Identification & Management
+        - Checklists
+        - Self-Assessment
+        Audit  Target Type: Any
+    - name: "Co-Designing Checklists to Understand Organizational Challenges and Opportunities\
+        \ around Fairness in AI.\u201D"
+      homepage_url: https://www.semanticscholar.org/paper/Co-Designing-Checklists-to-Understand-Challenges-in-Madaio-Stark/58bb221c1e375f254826b7b7341f74057e87676c
+      organization: '{"name": Madaio, Michael A. and Jennifer Wortman Vaughan}'
+      extra:
+        Format (TODO): White paper/Report
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy: &id004
+        - Standards Identification & Management
+        - Checklists
+        - Participatory Standard-Setting
+        - Self-Assessment
+        Audit  Target Type: Any
+    - name: NeurIPS Ethics/Reproducibility Checklist
+      homepage_url: https://neurips.cc/Conferences/2021/PaperInformation/PaperChecklist
+      organization: '{"name": NeurIPS}'
+      extra:
+        Format (TODO): Handbook
+        License: OpenSource
+        Internal/External: Internal
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Standards Identification & Management
+        - Checklists
+        - Self-Assessment
+        Audit  Target Type: Any
+    - name: PwC Responsible AI Toolkit
+      homepage_url: https://pwc.qualtrics.com/jfe/form/SV_0UF8EgBJdAnV8fr
+      organization: '{"name": PWC}'
+      extra:
+        Format (TODO): Interactive form
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy: &id003
+        - Standards Identification & Management
+        - Checklists
+        - Grading
+        - Self-Assessment
+        Audit  Target Type: Any
+    - name: PwC Responsible AI Toolkit
+      homepage_url: https://pwc.qualtrics.com/jfe/form/SV_0UF8EgBJdAnV8fr
+      organization: '{"name": PWC}'
+      extra:
+        Format (TODO): Interactive form
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy: *id003
+        Audit  Target Type: Any
+  - name: Regulatory Awareness
+    items:
+    - name: Arthur AI
+      homepage_url: https://www.arthur.ai/
+      organization: '{"name": Arthur AI}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy: *id001
+        Audit  Target Type: Online Platform,ADS
+    - name: BNH
+      homepage_url: https://www.bnh.ai/
+      organization: '{"name": BNH}'
+      extra:
+        Format (TODO): Consultancy
+        License: Proprietary
+        Internal/External: Internal,External
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Standards Identification & Management
+        - Regulatory Awareness
+        - Compliance Discovery
+        Audit  Target Type: Online Platform,ADS
+  - name: Goal Articulation
+    items:
+    - name: Artificial Intelligence and User Trust (NISTIR 8332)
+      homepage_url: https://www.nist.gov/news-events/news/2021/05/nist-proposes-method-evaluating-user-trust-artificial-intelligence-systems
+      organization: '{"name": NIST}'
+      extra:
+        Format (TODO): White paper/Report
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Govt
+        Taxonomy:
+        - Standards Identification & Management
+        - Goal Articulation
+        Audit  Target Type: Any
+    - name: babl
+      homepage_url: https://babl.ai/services/
+      organization: '{"name": BABL AI}'
+      extra:
+        Format (TODO): Consultancy
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Standards Identification & Management
+        - Goal Articulation
+        - Standards Formulation
+        Audit  Target Type: Any
+    - name: Ethics, Transparency and Accountability Framework for Automated Decision-Making
+      homepage_url: https://www.gov.uk/government/publications/ethics-transparency-and-accountability-framework-for-automated-decision-making/ethics-transparency-and-accountability-framework-for-automated-decision-making
+      organization: '{"name": UK Government}'
+      extra:
+        Format (TODO): White paper/Report
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Govt
+        Taxonomy:
+        - Standards Identification & Management
+        - Goal Articulation
+        Audit  Target Type: ADS
+    - name: ORCAA
+      homepage_url: https://orcaarisk.com/what-we-do
+      organization: '{"name": O''Neil Risk Consulting & Algorithmic Auditing}'
+      extra:
+        Format (TODO): Consultancy
+        License: Proprietary
+        Internal/External: Internal,External
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Standards Identification & Management
+        - Goal Articulation
+        - Standards Formulation
+        Audit  Target Type: Any
+    - name: Responsible AI Principles
+      homepage_url: https://ai.google/principles/
+      organization: '{"name": Google}'
+      extra:
+        Format (TODO): White paper/Report
+        License: OpenSource
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Standards Identification & Management
+        - Goal Articulation
+        - Principle Statements
+        Audit  Target Type: Any
+    - name: The AI-RFX Procurement Framework
+      homepage_url: https://ethical.institute/rfx.html
+      organization: '{"name": Institute for Ethical AI & Machine Learning}'
+      extra:
+        Format (TODO): White paper/Report
+        License: OpenSource
+        Internal/External: Internal
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Standards Identification & Management
+        - Goal Articulation
+        - Principle Statements
+        Audit  Target Type: Any
+  - name: Participatory Standard-Setting
+    items:
+    - name: "Co-Designing Checklists to Understand Organizational Challenges and Opportunities\
+        \ around Fairness in AI.\u201D"
+      homepage_url: https://www.semanticscholar.org/paper/Co-Designing-Checklists-to-Understand-Challenges-in-Madaio-Stark/58bb221c1e375f254826b7b7341f74057e87676c
+      organization: '{"name": Madaio, Michael A. and Jennifer Wortman Vaughan}'
+      extra:
+        Format (TODO): White paper/Report
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy: *id004
+        Audit  Target Type: Any
+    - name: Community Engagement Toolkit for Planning
+      homepage_url: https://dilgpprd.blob.core.windows.net/general/community-engagement-toolkit.pdf
+      organization: '{"name": Queensland Government}'
+      extra:
+        Format (TODO): White paper/Report
+        License: OpenSource
+        Internal/External: Internal,External
+        Org Type (Creator): Govt
+        Taxonomy:
+        - Standards Identification & Management
+        - Participatory Standard-Setting
+        Audit  Target Type: Any
+    - name: Community Jury
+      homepage_url: https://learn.microsoft.com/en-us/azure/architecture/guide/responsible-innovation/community-jury/
+      organization: '{"name": Microsoft}'
+      extra:
+        Format (TODO): Handbook
+        License: OpenSource
+        Internal/External: Internal,External
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Standards Identification & Management
+        - Participatory Standard-Setting
+        Audit  Target Type: Any
+  - name: Documentation
+    items:
+    - name: Datasheets for Datasets
+      homepage_url: https://arxiv.org/abs/1803.09010?context=cs.
+      organization: "{\"name\": Timnit Gebru, Jamie Morgenstern, Briana Vecchione,\
+        \ Jennifer Wortman Vaughan, Hanna Wallach, Hal Daum\xE9 III, Kate Crawford}"
+      extra:
+        Format (TODO): White paper/Report
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Standards Identification & Management
+        - Documentation
+        - Single Stage Documentation
+        Audit  Target Type: Any
+    - name: Model Cards for Model Reporting.
+      homepage_url: https://dl.acm.org/doi/10.1145/3287560.3287596
+      organization: "{\"name\": Margaret Mitchell, Simone Wu, Andrew Zaldivar, Parker\
+        \ Barnes, Lucy Vasserman, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah\
+        \ Raji, and Timnit Gebru. 2019. In Proceedings of the Conference on Fairness,\
+        \ Accountability, and Transparency (FAT* \u201919). Association for Computing\
+        \ Machinery, New York}"
+      extra:
+        Format (TODO): White paper/Report
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Single Stage Documentation
+        - Documentation
+        - Standards Identification & Management
+        Audit  Target Type: Any
+    - name: Model Cards Toolkit
+      homepage_url: https://github.com/tensorflow/model-card-toolkit
+      organization: '{"name": Google}'
+      extra:
+        Format (TODO): Code Repository,White paper/Report
+        License: OpenSource
+        Internal/External: Internal
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Standards Identification & Management
+        - Documentation
+        - Continuous Documentation
+        Audit  Target Type: Online Platform,ADS
+      repo_url: https://github.com/tensorflow/model-card-toolkit
+    - name: OpenRAIL
+      homepage_url: https://huggingface.co/blog/open_rail
+      organization: '{"name": Hugging Face}'
+      extra:
+        Format (TODO): Handbook
+        License: OpenSource
+        Internal/External: Internal,External
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Standards Identification & Management
+        - Documentation
+        - Licenses
+        Audit  Target Type: Any
+  - name: Methods Design
+    items:
+    - name: DD Tool
+      homepage_url: https://www.cdt.info/ddtool/
+      organization: '{"name": Center for Democracy & Technology (CDT}'
+      extra:
+        Format (TODO): Handbook
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Standards Identification & Management
+        - Methods Design
+        Audit  Target Type: Any
+    - name: Value Sensitive Design and Information Systems
+      homepage_url: https://www.researchgate.net/publication/229068326_Value_Sensitive_Design_and_Information_Systems
+      organization: '{"name":  Batya Friedman et al}'
+      extra:
+        Format (TODO): White paper/Report
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Standards Identification & Management
+        - Methods Design
+        Audit  Target Type: Any
+- name: Harms Discovery
+  subcategories:
+  - name: Incident Reporting
+    items:
+    - name: AI Incidents Database
+      homepage_url: https://partnershiponai.org/workstream/ai-incidents-database/
+      organization: '{"name": Partnership on AI}'
+      extra:
+        Format (TODO): Data Repository
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Harms Discovery
+        - Incident Reporting
+        - Incident Databases
+        Audit  Target Type: Any
+    - name: Artifical Intelligence Incident Database
+      homepage_url: https://incidentdatabase.ai/
+      organization: '{"name": Georgetown, bnh.ai, etc.}'
+      extra:
+        Format (TODO): Data Repository
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Harms Discovery
+        - Incident Reporting
+        - Incident Databases
+        Audit  Target Type: Any
+    - name: biasbounty.ai
+      homepage_url: https://biasbounty.ai/
+      organization: '{"name": DeepTrust Alliance}'
+      extra:
+        Format (TODO): .nan
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Harms Discovery
+        - Incident Reporting
+        - Solicited Crowd-Sourced Reporting (Bug Bounties)
+        Audit  Target Type: Online Platform
+    - name: Dark Patterns Tip Line
+      homepage_url: https://darkpatternstipline.org/
+      organization: '{"name": Stanford University, Rita Allen Foundation}'
+      extra:
+        Format (TODO): Software Product
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Harms Discovery
+        - Incident Reporting
+        - Public or Community Intake Forms
+        Audit  Target Type: Online Platform
+    - name: Deblinder
+      homepage_url: https://arxiv.org/pdf/2109.11690.pdf
+      organization: "{\"name\": \xC1NGEL ALEXANDER CABRERA et al.}"
+      extra:
+        Format (TODO): White paper/Report,Software Product
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Harms Discovery
+        - Solicited Crowd-Sourced Reporting (Bug Bounties)
+        - Incident Reporting
+        Audit  Target Type: Online Platform,ADS
+    - name: HackerOne Bounty
+      homepage_url: https://www.hackerone.com/product/bug-bounty-platform
+      organization: '{"name": HackerOne}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Harms Discovery
+        - Incident Reporting
+        - Solicited Crowd-Sourced Reporting (Bug Bounties)
+        Audit  Target Type: Online Platform,ADS
+    - name: Whistle Blower Proection
+      homepage_url: https://www.ftc.gov/office-inspector-general/whistleblower-protection
+      organization: '{"name": Federal Trade Commission}'
+      extra:
+        Format (TODO): Handbook
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Govt
+        Taxonomy:
+        - Harms Discovery
+        - Incident Reporting
+        - Whistleblowing
+        Audit  Target Type: Any
+    - name: YouTube Regrets
+      homepage_url: https://foundation.mozilla.org/en/youtube/findings/, https://foundation.mozilla.org/en/youtube/regrets/,
+        https://foundation.mozilla.org/en/youtube/regretsreporter/
+      organization: '{"name": Mozilla}'
+      extra:
+        Format (TODO): Software Product
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy: &id011
+        - Data Collection
+        - Field Data Collection
+        - Data Donation
+        - Harms Discovery
+        - Incident Reporting
+        Audit  Target Type: Online Platform
+  - name: Target Identification
+    items:
+    - name: AI Vulnerability Database
+      homepage_url: https://www.avidml.org/home
+      organization: '{"name": AVID}'
+      extra:
+        Format (TODO): Data Repository
+        License: OpenSource
+        Internal/External: Internal
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Harms Discovery
+        - Target Identification
+        - Algorithm Visibility
+        Audit  Target Type: Any
+    - name: Algorithm Tips
+      homepage_url: http://algorithmtips.org/, http://algorithmtips.org/old-database/
+      organization: '{"name": Northwestern University}'
+      extra:
+        Format (TODO): Data Repository
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Harms Discovery
+        - Target Identification
+        - Algorithm Visibility
+        Audit  Target Type: Any
+    - name: Algorithmic Control
+      homepage_url: https://www.muckrock.com/project/algorithmic-control-automated-decisionmaking-in-americas-cities-84/
+      organization: '{"name": MuckRock}'
+      extra:
+        Format (TODO): White paper/Report
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Harms Discovery
+        - Target Identification
+        - Algorithm Visibility
+        Audit  Target Type: ADS
+  - name: Education/Awareness
+    items:
+    - name: Algorithm Equity Toolkit
+      homepage_url: https://www.aclu-wa.org/AEKit
+      organization: '{"name": ACLU Washington}'
+      extra:
+        Format (TODO): Interactive form
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Harms Discovery
+        - Education/Awareness
+        - Community Education
+        Audit  Target Type: ADS
+    - name: Judgment Call
+      homepage_url: https://docs.microsoft.com/en-us/azure/architecture/guide/responsible-innovation/judgmentcall
+      organization: '{"name": Microsoft}'
+      extra:
+        Format (TODO): Handbook
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Harms Discovery
+        - Education/Awareness
+        - Visioning
+        Audit  Target Type: Any
+    - name: Landlord Tech Watch
+      homepage_url: https://antievictionmappingproject.github.io/landlordtech/
+      organization: '{"name": Anti-Eviction Mapping}'
+      extra:
+        Format (TODO): Handbook
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Harms Discovery
+        - Education/Awareness
+        - Community Education
+        Audit  Target Type: Online Platform,ADS
+    - name: 'Lucidchart '
+      homepage_url: https://www.lucidchart.com/pages
+      organization: '{"name": Lucidchart }'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal,External
+        Org Type (Creator): For Profit
+        Taxonomy: &id008
+        - Data Collection
+        - Field Data Collection
+        - Interview/Survey
+        - Harms Discovery
+        - Education/Awareness
+        - Visioning
+        Audit  Target Type: Any
+- name: Transparency Infrastructure
+  subcategories:
+  - name: Structured Access / API Access
+    items:
+    - name: AI Test Kitchen
+      homepage_url: https://blog.google/technology/ai/join-us-in-the-ai-test-kitchen/
+      organization: '{"name": Google}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Structured Access / API Access
+        - Transparency Infrastructure
+        Audit  Target Type: Any
+    - name: Face Recognition Vendor Test (FRVT)
+      homepage_url: https://www.nist.gov/programs-projects/face-recognition-vendor-test-frvt
+      organization: '{"name": NIST}'
+      extra:
+        Format (TODO): White paper/Report,API
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Govt
+        Taxonomy:
+        - Transparency Infrastructure
+        - Structured Access / API Access
+        Audit  Target Type: Any
+  - name: Secure and Privacy-Preserving Sharing
+    items:
+    - name: Databricks Lakehouse Platform
+      homepage_url: https://www.databricks.com/product/data-lakehouse
+      organization: '{"name": Databricks}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy: *id005
+        Audit  Target Type: Online Platform
+  - name: Data Sharing
+    items:
+    - name: Databricks Lakehouse Platform
+      homepage_url: https://www.databricks.com/product/data-lakehouse
+      organization: '{"name": Databricks}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy: *id005
+        Audit  Target Type: Online Platform
+- name: Data Collection
+  subcategories:
+  - name: Field Data Collection
+    items:
+    - name: Amazon Brand Detector
+      homepage_url: https://github.com/the-markup/tool-amazon-brand-detector
+      organization: '{"name": The Markup}'
+      extra:
+        Format (TODO): Software Product
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Data Collection
+        - Field Data Collection
+        - Data Scraping
+        Audit  Target Type: Online Platform
+      repo_url: https://github.com/the-markup/tool-amazon-brand-detector
+    - name: Dedoose
+      homepage_url: https://www.dedoose.com/
+      organization: '{"name": Dedoose}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal,External
+        Org Type (Creator): For Profit
+        Taxonomy: *id006
+        Audit  Target Type: Any
+    - name: Gigbox / Shipt Calculator
+      homepage_url: https://gigbox.media.mit.edu/app/, https://gigbox.media.mit.edu/posts/posts/tool-the-shipt-calculator/,
+        https://www.dcalacci.net/papers/204.10.13-shipt-cscw-latest.pdf
+      organization: '{"name": MIT, Coworker.org}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy: *id007
+        Audit  Target Type: Online Platform
+    - name: 'Lucidchart '
+      homepage_url: https://www.lucidchart.com/pages
+      organization: '{"name": Lucidchart }'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal,External
+        Org Type (Creator): For Profit
+        Taxonomy: *id008
+        Audit  Target Type: Any
+    - name: MaxQDA
+      homepage_url: https://www.maxqda.com/
+      organization: '{"name": MaxQDA}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal,External
+        Org Type (Creator): For Profit
+        Taxonomy: *id009
+        Audit  Target Type: Any
+    - name: Mozilla Rally
+      homepage_url: https://rally.mozilla.org/
+      organization: '{"name": Mozilla}'
+      extra:
+        Format (TODO): Software Product
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Data Collection
+        - Field Data Collection
+        - Data Donation
+        Audit  Target Type: Online Platform
+    - name: NYU Ad Observer
+      homepage_url: https://adobservatory.org/
+      organization: '{"name": NYU}'
+      extra:
+        Format (TODO): Data Repository
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): University
+        Taxonomy:
+        - Data Collection
+        - Field Data Collection
+        - Data Donation
+        Audit  Target Type: Any
+    - name: Taxi Trips Study
+      homepage_url: https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew
+      organization: '{"name": Chicago Data Portal}'
+      extra:
+        Format (TODO): Data Repository
+        License: OpenSource
+        Internal/External: .nan
+        Org Type (Creator): Govt
+        Taxonomy:
+        - Data Collection
+        - Field Data Collection
+        - Compelled Transparency
+        Audit  Target Type: Online Platform,ADS
+    - name: The Citizen Browser Project
+      homepage_url: https://themarkup.org/citizen-browser
+      organization: '{"name": The Markup}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: .nan
+        Org Type (Creator): Non Profit
+        Taxonomy: &id010
+        - Data Collection
+        - Field Data Collection
+        - Data Donation
+        - Data Scraping
+        Audit  Target Type: Online Platform
+    - name: The Citizen Browser Project
+      homepage_url: https://themarkup.org/citizen-browser
+      organization: '{"name": The Markup}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: .nan
+        Org Type (Creator): Non Profit
+        Taxonomy: *id010
+        Audit  Target Type: Online Platform
+    - name: Tracking Exposed
+      homepage_url: https://facebook.tracking.exposed/, https://algorithms.exposed/,
+        https://tracking.exposed/, https://youtube.tracking.exposed/, https://amazon.tracking.exposed/
+      organization: '{"name": Algorithms Exposed (University of Amsterdam)}'
+      extra:
+        Format (TODO): Software Product
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Data Collection
+        - Field Data Collection
+        - Data Scraping
+        Audit  Target Type: Online Platform
+    - name: YouTube Regrets
+      homepage_url: https://foundation.mozilla.org/en/youtube/findings/, https://foundation.mozilla.org/en/youtube/regrets/,
+        https://foundation.mozilla.org/en/youtube/regretsreporter/
+      organization: '{"name": Mozilla}'
+      extra:
+        Format (TODO): Software Product
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy: *id011
+        Audit  Target Type: Online Platform
+  - name: Bot Deployment
+    items:
+    - name: Appium
+      homepage_url: https://appium.io/, https://par.nsf.gov/servlets/purl/10175595,
+        https://ojs.aaai.org/index.php/ICWSM/article/view/7277/7131
+      organization: '{"name": Appium}'
+      extra:
+        Format (TODO): Software Product
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Data Collection
+        - Bot Deployment
+        Audit  Target Type: Online Platform
+    - name: Selenium
+      homepage_url: https://www.selenium.dev/, https://ojs.aaai.org/index.php/ICWSM/article/view/7276/7130
+      organization: '{"name": Selenium}'
+      extra:
+        Format (TODO): Software Product
+        License: OpenSource
+        Internal/External: External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Data Collection
+        - Bot Deployment
+        Audit  Target Type: Any
+  - name: Simulation
+    items:
+    - name: SimReddit
+      homepage_url: https://arxiv.org/pdf/2208.04024.pdf
+      organization: '{"name": Stanford University}'
+      extra:
+        Format (TODO): White paper/Report
+        License: OpenSource
+        Internal/External: Internal,External
+        Org Type (Creator): Non Profit
+        Taxonomy:
+        - Data Collection
+        - Simulation
+        Audit  Target Type: Online Platform,ADS
+    - name: Web Enabled Simulation
+      homepage_url: https://research.facebook.com/publications/wes-agent-based-user-interaction-simulation-on-real-infrastructure/
+      organization: '{"name": Facebook}'
+      extra:
+        Format (TODO): White paper/Report
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy:
+        - Data Collection
+        - Simulation
+        Audit  Target Type: Online Platform
+- name: Audit Communication
+  subcategories:
+  - name: Dataset Visualization
+    items:
+    - name: 'Facets: Visualizations for ML Datasets'
+      homepage_url: https://pair-code.github.io/facets/
+      organization: '{"name": Google}'
+      extra:
+        Format (TODO): Software Product
+        License: Proprietary
+        Internal/External: Internal
+        Org Type (Creator): For Profit
+        Taxonomy: *id012
+        Audit  Target Type: Online Platform,ADS
