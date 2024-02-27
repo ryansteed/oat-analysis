@@ -1,9 +1,9 @@
 # AI Audit Tool Database Analysis
 Authors: Victor Ojewale, Ryan Steed, Briana Vecchione, Abeba Birhane, Deb Raji
 
-Developer: Ryan Steed
+Developers: Ryan Steed, Victor Ojewale
 
-This tool powers the landscape visualization and data analysis for the Open Source Audit Tooling project, including results in our paper, "Towards AI Accountability Infrastructure: Gaps and Opportunities in AI Audit Tooling."
+This tool powers the landscape visualization and data analysis for the Open Source Audit Tooling project, including results in our paper, "[Towards AI Accountability Infrastructure: Gaps and Opportunities in AI Audit Tooling](https://rbsteed.com/papers/accountability-infrastructure)."
 
 ## Installation
 `make venv`
