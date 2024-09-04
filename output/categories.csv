@@ -1,51 +1,54 @@
 "","taxonomy_1st","taxonomy_2nd","taxonomy_3rd","N"
-"1","Harms Disc.","Education/Awareness","Community Education",2
-"2","Harms Disc.","Education/Awareness","Visioning",6
+"1","Harms Disc.","Education/Awareness","Community Education",3
+"2","Harms Disc.","Education/Awareness","Visioning",8
 "3","Harms Disc.","Education/Awareness",NA,7
-"4","Harms Disc.","Incident Reporting","Incident Databases",4
+"4","Harms Disc.","Incident Reporting","Incident Databases",5
 "5","Harms Disc.","Incident Reporting","Public or Community Intake Forms",3
 "6","Harms Disc.","Incident Reporting","Solicited Crowd-Sourced Reporting (Bug Bounties)",7
 "7","Harms Disc.","Incident Reporting","Whistleblowing",2
 "8","Harms Disc.","Incident Reporting",NA,5
-"9","Harms Disc.","Target Identification","Algorithm Visibility",5
-"10","Harms Disc.","Target Identification",NA,4
-"11","Standards","Participatory",NA,6
-"12","Standards","Reg. Awareness","Compliance Discovery",2
-"13","Standards","Reg. Awareness","Compliance Monitoring",6
-"14","Standards","Documentation","Continuous Documentation",3
-"15","Standards","Documentation","Licenses",1
-"16","Standards","Documentation","Single Stage Documentation",15
-"17","Standards","Documentation",NA,1
-"18","Standards","Goal Articulation","Principle Statements",15
-"19","Standards","Goal Articulation","Standards Formulation",6
-"20","Standards","Goal Articulation",NA,54
-"21","Standards","Methods Design",NA,4
-"22","Standards","Other",NA,36
-"23","Standards","Self-Assessment","Checklists",41
-"24","Standards","Self-Assessment","Grading",4
-"25","Transp. Infra.","Secure/Private Sharing","Federated Learning",3
-"26","Transp. Infra.","Secure/Private Sharing",NA,3
-"27","Transp. Infra.","Structured Access",NA,5
-"28","Transp. Infra.","Data Sharing",NA,2
-"29","Data Coll.","Bot Deployment",NA,3
-"30","Data Coll.","Field Data Collection","Compelled Transparency",2
-"31","Data Coll.","Field Data Collection","Data Donation",12
-"32","Data Coll.","Field Data Collection","Data Scraping",12
-"33","Data Coll.","Field Data Collection","Interview/Survey",4
-"34","Data Coll.","Simulation",NA,10
-"35","Perf. Analysis","Qual. Analysis",NA,2
-"36","Perf. Analysis","Accuracy Evaluation","A/B Testing",7
-"37","Perf. Analysis","Accuracy Evaluation","Adversarial Testing",3
-"38","Perf. Analysis","Accuracy Evaluation","Benchmarking",34
-"39","Perf. Analysis","Accuracy Evaluation","Model Monitoring",13
-"40","Perf. Analysis","Accuracy Evaluation",NA,6
-"41","Perf. Analysis","Explainability","Model Explainability",22
-"42","Perf. Analysis","Explainability","Training Dataset Exploration",6
-"43","Perf. Analysis","Explainability",NA,5
-"44","Perf. Analysis","Fairness",NA,27
-"45","Perf. Analysis","Other",NA,1
-"46","Audit Comm.","Dataset Viz.",NA,2
-"47","Advocacy","Resistance",NA,3
-"48","Advocacy","Community Spaces",NA,2
-"49","Advocacy","Legal Search",NA,7
-"50","Advocacy","Organising Tools",NA,2
+"9","Harms Disc.","Other",NA,1
+"10","Harms Disc.","Target Identification","Algorithm Visibility",5
+"11","Harms Disc.","Target Identification",NA,4
+"12","Standards","Participatory",NA,5
+"13","Standards","Reg. Awareness","Compliance Discovery",3
+"14","Standards","Reg. Awareness","Compliance Monitoring",8
+"15","Standards","Documentation","Continuous Documentation",3
+"16","Standards","Documentation","Licenses",1
+"17","Standards","Documentation","Single Stage Documentation",16
+"18","Standards","Documentation",NA,1
+"19","Standards","Goal Articulation","Principle Statements",17
+"20","Standards","Goal Articulation","Standards Formulation",15
+"21","Standards","Goal Articulation",NA,54
+"22","Standards","Methods Design",NA,6
+"23","Standards","Other",NA,36
+"24","Standards","Self-Assessment","Checklists",46
+"25","Standards","Self-Assessment","Grading",6
+"26","Standards","Self-Assessment",NA,1
+"27","Transp. Infra.","Secure/Private Sharing","Federated Learning",3
+"28","Transp. Infra.","Secure/Private Sharing",NA,3
+"29","Transp. Infra.","Structured Access",NA,5
+"30","Transp. Infra.","Data Sharing",NA,2
+"31","Data Coll.","Bot Deployment",NA,3
+"32","Data Coll.","Field Data Collection","Compelled Transparency",2
+"33","Data Coll.","Field Data Collection","Data Donation",15
+"34","Data Coll.","Field Data Collection","Data Scraping",14
+"35","Data Coll.","Field Data Collection","Interview/Survey",5
+"36","Data Coll.","Simulation",NA,10
+"37","Perf. Analysis","Qual. Analysis",NA,3
+"38","Perf. Analysis","Accuracy Evaluation","A/B Testing",7
+"39","Perf. Analysis","Accuracy Evaluation","Adversarial Testing",4
+"40","Perf. Analysis","Accuracy Evaluation","Benchmarking",38
+"41","Perf. Analysis","Accuracy Evaluation","Model Monitoring",14
+"42","Perf. Analysis","Accuracy Evaluation",NA,9
+"43","Perf. Analysis","Explainability","Model Explainability",24
+"44","Perf. Analysis","Explainability","Training Dataset Exploration",7
+"45","Perf. Analysis","Explainability",NA,5
+"46","Perf. Analysis","Fairness",NA,30
+"47","Perf. Analysis","Other",NA,3
+"48","Perf. Analysis","Privacy",NA,1
+"49","Audit Comm.","Dataset Viz.",NA,6
+"50","Audit Comm.","Audit Reporting",NA,2
+"51","Advocacy","Community Spaces",NA,2
+"52","Advocacy","Legal Search",NA,7
+"53","Advocacy","Organizing Resistance",NA,5

@@ -90,7 +90,7 @@ clean_airtable = function(airtable) {
         "Dataset Visualization"="Dataset Viz.",
         "Structured Access / API Access" = "Structured Access"
       ),
-      taxonomy_1st_condensed = fct_collapse(taxonomy_1st, "Comm. & Advocacy"=c("Audit Comm.", "Advocacy")),
+      taxonomy_1st_condensed = fct_collapse(taxonomy_1st, "Comm./Advoc."=c("Audit Comm.", "Advocacy")),
       taxonomy_accountability = fct_collapse(taxonomy_1st, "Accountability"=c("Harms Disc.", "Audit Comm.", "Advocacy"), "Evaluation"=c("Standards", "Transp. Infra.", "Data Coll.", "Perf. Analysis")),
       cb_last_funding_on = as.Date(cb_last_funding_on),
       has_code_or_data = as.factor(if_else(grepl("API|Software|Repository", format_todo), "Has code/data", "No code/data")),
@@ -249,6 +249,7 @@ bar_agg = function(df, taxonomy_level, field, position, agg_kind, agg_col) {
   else if (agg_kind == "sum") {
     agg_func = function(x) sum(x, na.rm=T)
   }
+  print(df)
   notna = df %>% drop_na(!!sym(agg_col))
   agg = agg_funds(notna, field, taxonomy_level, agg_func, agg_col)
   print(agg)

@@ -313,7 +313,7 @@ def _join_crunchbase(df, path_to_crunchbase, from_sql: bool = False):
     cb_data = _crunchbase_csv(path_to_crunchbase, cb_urls) if not from_sql else _crunchbase_sql(path_to_crunchbase, cb_urls)
     missing_rows = [c for c in cb_urls if c not in cb_data["cb_url"].values]
     if len(missing_rows) > 0:
-        print("[WARN] Missing {} rows".format(missing_rows))
+        print("[WARN] Missing {} rows".format(set(missing_rows)))
     df = df.merge(
         cb_data.add_prefix("cb_"),
         left_on="cb_url", right_on="cb_cb_url",

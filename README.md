@@ -17,7 +17,7 @@ All code used to analyze our database and produce the results in our paper can b
 3. Run `python clean.py pivot data/airtable.csv`. This endpoint explodes the `Taxonomy` field into three levels, cleans the data, and joins in Github and Crunchbase data. Cleaned output is stored in `output/airtable_for_pivot.csv`.
 
 ### Github data
-Add your Github personal access token to `secrets.json`. The file should look like this:
+Add your Github personal access token to `secrets.json`, with permission to read public repositories. The file should look like this:
 ```json
 {
     "github_token": "YOUR_TOKEN"

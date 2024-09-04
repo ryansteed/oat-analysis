@@ -341,7 +341,8 @@ bar_forks = function(taxonomy_level, field, grouping, agg_kind) {
   else if (agg_kind == "sum") {
     lab = "Total Github forks"
   }
-  bar_agg(taxonomy_level, field, grouping, agg_kind, "gh_forks") +
+  gh_exists %>% 
+    bar_agg(taxonomy_level, field, grouping, agg_kind, "gh_forks") +
     ylab(lab)
 }
 # bar_stars("taxonomy_1st", "org_type_creator", "stack", "median")
@@ -371,7 +372,7 @@ bar_issues = function(taxonomy_level, field, grouping, agg_kind) {
   else if (agg_kind == "sum") {
     lab = "Total Github issues"
   }
-  bar_agg(taxonomy_level, field, grouping, agg_kind, "gh_issues") +
+  gh_exists %>% bar_agg(taxonomy_level, field, grouping, agg_kind, "gh_issues") +
     ylab(lab)
 }
 # bar_stars("taxonomy_1st", "org_type_creator", "stack", "median")

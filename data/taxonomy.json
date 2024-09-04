@@ -18,11 +18,11 @@
     "Data Collection": ["Simulation", "Bot Deployment", "Field Data Collection"],
     "Field Data Collection": ["Interview/Survey", "Data Scraping", "Data Donation", "Compelled Transparency"],
 
-    "Performance Analysis": ["Fairness", "Accuracy Evaluation", "Explainability", "Qualitative Analysis"],
+    "Performance Analysis": ["Fairness", "Accuracy Evaluation", "Explainability", "Qualitative Analysis", "Privacy"],
     "Accuracy Evaluation": ["Benchmarking", "A/B Testing", "Model Monitoring", "Adversarial Testing"],
     "Explainability": ["Training Dataset Exploration", "Model Explainability"],
     
     "Audit Communication": ["Dataset Visualization", "Audit Reporting"],
 
-    "Advocacy": ["Legal Search", "Tools for Resistance", "Organising Tools", "Community Spaces"]
+    "Advocacy": ["Legal Search", "Organizing Resistance", "Community Spaces"]
 }
