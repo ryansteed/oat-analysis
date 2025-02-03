@@ -119,6 +119,9 @@ bar_1st("org_type_creator", "fill")
 bar_1st("audit_target_type", "fill")
 bar_1st("has_code_or_data", "fill")
 bar_1st("has_paper_or_handbook", "fill")
+```
+
+```{r org_type_creator}
 bar_count("license", "fill", "org_type_creator") + xlab("Organization Type")
 save("plots/counts/org_type_creator_license", 4.5, 4)
 ```

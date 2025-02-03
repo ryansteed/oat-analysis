@@ -16,7 +16,6 @@ pacman::p_load(
 )
 pacman::p_install_gh("coolbutuseless/ggpattern")
 
-palette = "Set2"
 # pattern_scale = ggpattern::scale_pattern_type_discrete()
 labels = list(
   "license"="License",
@@ -67,6 +66,7 @@ clean_airtable = function(airtable) {
       audit_target_type = fct_collapse(audit_target_type, Any = c("ADS,Online Platform", "Online Platform,ADS", "Any", "Online Platform,Large Pre-trained Models"), Other = "other"),
       internal_external = fct_recode(internal_external, Both = "Internal,External"),
       license = fct_recode(license, "Open Source"="OpenSource"),
+      org_type_creator = fct_recode(org_type_creator, "Non-Profit"="Non Profit", "Gov't"="Govt"),
       cb_employee_count = fct_reorder(cb_employee_count, cb_employee_count_min),
       cb_estimated_revenue_range = fct_recode(cb_estimated_revenue_range, "<$1M"="Less than $1M"),
       cb_estimated_revenue_range = fct_relevel(cb_estimated_revenue_range, "<$1M", "$1M to $10M", "$10M to $50M", "$50M to $100M", "$100M to $500M", "$500M to $1B", "$1B to $10B", "$10B+"),
@@ -117,9 +117,13 @@ count_tools = function(field, grouping) {
     grouped = cleaned %>%
       group_by(!!sym(grouping), !!sym(field))
   }
-  else {
+  else if ("taxonomy_2nd" %in% grouping) {
     grouped = cleaned %>%
       group_by(taxonomy_1st_condensed, !!sym(grouping), !!sym(field))
+  }
+  else {
+    grouped = cleaned %>%
+      group_by(!!sym(grouping), !!sym(field))
   }
   grouped = grouped %>%
     summarise(count = n_distinct(name, organization), .groups="drop_last") %>%
@@ -131,22 +135,25 @@ count_tools = function(field, grouping) {
     drop_na()
   return(grouped)
 }
+
 bar_count = function(field, position, taxonomy_level) {
   agg = count_tools(field, taxonomy_level)
   print(agg)
   bar(agg, field, position, taxonomy_level) +
     ylab(if (position == "fill") "% of tools" else "# tools")
 }
+
 bar = function(agg, field, position, taxonomy_level) {
   bar_pattern(agg, field, position, taxonomy_level)
   # bar_dots(agg, field, position, taxonomy_level)
 }
+
 bar_pattern = function(agg, field, position, taxonomy_level) {
   ggplot(agg, aes(
     x=if (position == "fill") !!sym(taxonomy_level) else reorder(!!sym(taxonomy_level), total),
     y=count,
     fill=as.factor(!!sym(field)),
-    colour=!!sym(field),
+    colour=as.factor(!!sym(field)),
     pattern=as.factor(!!sym(field)),
     pattern_fill=as.factor(!!sym(field)),
     pattern_colour=as.factor(!!sym(field)),
@@ -224,6 +231,7 @@ agg_funds = function(df, field, grouping, agg_func, agg_col) {
 }
 
 pattern_theme = function(field) {
+  palette = "Set2"
   list(
     ggpattern::scale_pattern_discrete(
       name=labels[[field]],
