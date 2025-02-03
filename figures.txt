@@ -1,0 +1,16 @@
+counts/first_stack_license.pdf
+counts/org_type_creator_license.pdf
+counts/second_stack_org_type_creator.pdf
+boxes/gh_forks_org_type_creator.pdf
+boxes/cites_org_type_creator.pdf
+counts/first_stack_org_type_creator.pdf
+counts/first_stack_has_code_or_data.pdf
+counts/second_stack_license.pdf
+counts/second_stack_audit_target_type.pdf
+counts/second_stack_has_code_or_data.pdf
+counts/second_stack_has_paper_or_handbook.pdf
+hists/cb_employee_count_org_type_creator.pdf
+hists/cb_employee_count_license.pdf
+hists/cb_estimated_revenue_range_org_type_creator.pdf
+hists/cb_estimated_revenue_range_license.pdf
+boxes/cb_total_funding_usd_mil_org_type_creator.pdf

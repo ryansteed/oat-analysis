@@ -15,3 +15,10 @@ code_anonymized.zip:
 	sed -i '' -E -e 's@(Ryan Steed|Open Source Audit Tooling|rbsteed)@ANONYMOUS@g' code_anonymized/Makefile
 	zip -r code_anonymized.zip code_anonymized
 	rm -rf code_anonymized
+
+figures:
+	mkdir -p figures
+	-rm figures/*
+	while IFS= read -r fig; do \
+		ln "$$PWD/plots/$$fig" figures/${fig##*/}; \
+	done < figures.txt
