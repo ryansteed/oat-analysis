@@ -88,7 +88,8 @@ clean_airtable = function(airtable) {
         "Qualitative Analysis"="Qual. Analysis",
         "Tools for Resistance"="Resistance",
         "Dataset Visualization"="Dataset Viz.",
-        "Structured Access / API Access" = "Structured Access"
+        "Structured Access / API Access" = "Structured Access",
+        "Organizing Resistance" = "Org. Resistance"
       ),
       taxonomy_1st_condensed = fct_collapse(taxonomy_1st, "Comm./Advoc."=c("Audit Comm.", "Advocacy")),
       taxonomy_accountability = fct_collapse(taxonomy_1st, "Accountability"=c("Harms Disc.", "Audit Comm.", "Advocacy"), "Evaluation"=c("Standards", "Transp. Infra.", "Data Coll.", "Perf. Analysis")),
