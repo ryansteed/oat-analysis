@@ -11,3 +11,4 @@ cbinsights/*
 notebooks/
 *.Rproj
 renv/
+figures/
