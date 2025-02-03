@@ -10,3 +10,4 @@ crunchbase/cb-query_*
 cbinsights/*
 notebooks/
 *.Rproj
+renv/
