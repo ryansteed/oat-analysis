@@ -1,3 +1,5 @@
+.PHONY: figures
+
 VENV_NAME?=venv
 PYTHON=${VENV_NAME}/bin/python
 

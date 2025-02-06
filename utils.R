@@ -230,8 +230,8 @@ agg_funds = function(df, field, grouping, agg_func, agg_col) {
   return(grouped)
 }
 
+palette = "Set2"
 pattern_theme = function(field) {
-  palette = "Set2"
   list(
     ggpattern::scale_pattern_discrete(
       name=labels[[field]],
@@ -301,7 +301,7 @@ violin = function(df, col, field, taxonomy_level, label_col, logscale) {
     drop_na(!!sym(col)) %>%
     distinct(!!sym(col), !!sym(field), !!sym(taxonomy_level), !!sym(label_col))  %>%
     group_by(!!(sym(taxonomy_level)), !!sym(field)) %>%
-    arrange(-!!sym(col)) %>%
+    # arrange(!!sym(field)) %>%
     mutate(
       q1 = quantile(!!sym(col), 0.25),
       q3 = quantile(!!sym(col), 0.75),
@@ -323,7 +323,8 @@ violin = function(df, col, field, taxonomy_level, label_col, logscale) {
     mutate(
       panel_upper = max(q3 + 1.5 * iqr)
     ) %>%
-    ungroup()
+    ungroup() %>%
+    arrange(!!sym(field))
   points_display = points %>%
     filter(!is_outlier | logscale)
   stats = points %>%
@@ -356,9 +357,16 @@ violin = function(df, col, field, taxonomy_level, label_col, logscale) {
     plt = plt + scale_y_continuous(trans=scales::pseudo_log_trans(base = 10))
   }
   else {
-    plt = plt + geom_label(data=stats, aes(x=!!sym(field), y=panel_upper*1.1, label=label_outliers), na.rm=T, size=1, check_overlap=T, alpha=0.5, show.legend=F)
+    plt = plt + geom_label(data=stats, aes(x=!!sym(field), y=panel_upper*1.1, label=label_outliers), na.rm=T, size=0.5, label.size=5, check_overlap=T, alpha=0.5, show.legend=F)
   }
+  palette = "Set2"
+  print(levels(df[[field]]))
+  palette_labels = levels(df[[field]])
+  names(palette_labels) = levels(df[[field]])
+  palette_values = brewer_pal(palette=palette)(length(levels(df[[field]])))
+  names(palette_values) = levels(df[[field]])
   plt = plt +
+    scale_fill_manual(labels=palette_labels, values=palette_values) +
     xlab("Taxonomy Category") +
     # xlab(paste0("Taxonomy Category (N=", nrow(points), ")")) +
     guides(
@@ -372,15 +380,16 @@ violin = function(df, col, field, taxonomy_level, label_col, logscale) {
     theme(
       legend.position = "top",
       axis.text.x = element_text(angle=15, vjust=1, hjust=1),
+      axis.text.y = element_text(size=7),
       panel.spacing = unit(0.5, "lines")
     ) +
     ylab(var_labels[col])
   if (stats %>% select(!!sym(taxonomy_level)) %>% n_distinct() > 4) {
     plt = plt + facet_wrap(vars(!!sym(taxonomy_level)), scales="free")
-    save(sprintf("plots/boxes/%s_%s", col, field), 6.5, 5)
+    save(sprintf("plots/boxes/%s_%s", col, field), 6.5, 6.5)
   } else {
    plt = plt + facet_grid(cols=vars(!!sym(taxonomy_level)), scales="free", space="free_x") 
-   save(sprintf("plots/boxes/%s_%s", col, field), 6.5, 3.25)
+   save(sprintf("plots/boxes/%s_%s", col, field), 6.5, 4)
   }
   plt
 }
